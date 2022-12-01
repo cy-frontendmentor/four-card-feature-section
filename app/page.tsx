@@ -1,57 +1,54 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Card from '../components/card/card';
 
-export default function Home() {
+const page = () => {
+  const DUMMY_DATA = [];
+
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+    <div className=' px-8 py-[85px] lg:mx-auto lg:mx-w-[1110px] lg:px-0 lg:grid lg:justify-center'>
+      <div className='text-center mb-[76px]  grid justify-center'>
+        <div className=' mb-[13px]'>
+          <h1 className=' font-extralight text-very-dark-blue text-2xl tracking-[0.17px] lg:text-4xl'>
+            Reliable, efficient delivery
+          </h1>
+          <h1 className=' font-semibold text-2xl tracking-[0.17px] text-very-dark-blue lg:text-4xl'>
+            Powered by Technology
+          </h1>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+        <p className='text-grayish-blue text-[15px] leading-[25px] tracking-[0.1px] max-w-[540px] '>
+          Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is
+          successful
+        </p>
+      </div>
+      <div className='grid gap-y-[25px] justify-center xl:grid-cols-3 xl:items-center xl:gap-x-[30px]'>
+        <Card
+          title='Supervisor'
+          details='Monitors activity to identify project roadblocks'
+          image='/images/icon-supervisor.svg'
+          color='bg-cyan'
+        ></Card>
+        <div className='grid gap-y-[25px]'>
+          <Card
+            title='Team Builder'
+            details='Scans our talent network to create the optimal team for your project'
+            image='/images/icon-team-builder.svg'
+            color='bg-red'
+          ></Card>
+          <Card
+            title='Karma'
+            details='Regularly evaluates our talent to ensure quality'
+            image='/images/icon-karma.svg'
+            color='bg-orange'
+          ></Card>
+        </div>
+        <Card
+          title='Supervisor'
+          details='Monitors activity to identify project roadblocks'
+          image='/images/icon-calculator.svg'
+          color='bg-blue'
+        ></Card>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default page;
